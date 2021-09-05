@@ -26,7 +26,7 @@
               focusable="false"
               data-prefix="fas"
               data-icon="angle-double-right"
-              class="icon-primary svg-inline--fa fa-angle-double-right fa-w-14"
+              class="svg-accent svg-inline--fa fa-angle-double-right fa-w-14"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 448 512"
@@ -46,7 +46,7 @@
               focusable="false"
               data-prefix="fas"
               data-icon="home"
-              class="icon-primary svg-inline--fa fa-home fa-w-18"
+              class="svg-accent svg-inline--fa fa-home fa-w-18"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 576 512"
@@ -67,7 +67,7 @@
               focusable="false"
               data-prefix="fab"
               data-icon="react"
-              class="icon-primary svg-inline--fa fa-react fa-w-16"
+              class="svg-accent svg-inline--fa fa-react fa-w-16"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -88,7 +88,7 @@
               focusable="false"
               data-prefix="fab"
               data-icon="docker"
-              class="icon-primary svg-inline--fa fa-docker fa-w-20"
+              class="svg-accent svg-inline--fa fa-docker fa-w-20"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 640 512"
@@ -109,7 +109,7 @@
               focusable="false"
               data-prefix="fab"
               data-icon="github"
-              class="icon-primary svg-inline--fa fa-github fa-w-16"
+              class="svg-accent svg-inline--fa fa-github fa-w-16"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 496 512"
@@ -123,14 +123,16 @@
           </a>
         </li>
 
-        <li class="navbar__item">
+        <li class="navbar__item" id="toggleThemeButton">
           <a href="#toggle" class="navbar__link">
+            <!-- Light SVG -->
             <svg
+              id="lightSVG"
               aria-hidden="true"
               focusable="false"
               data-prefix="fas"
               data-icon="sun"
-              class="icon-primary svg-inline--fa fa-sun fa-w-16"
+              class="svg-accent svg-inline--fa fa-sun fa-w-16"
               role="img"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
@@ -140,25 +142,62 @@
                 d="M256 160c-52.9 0-96 43.1-96 96s43.1 96 96 96 96-43.1 96-96-43.1-96-96-96zm246.4 80.5l-94.7-47.3 33.5-100.4c4.5-13.6-8.4-26.5-21.9-21.9l-100.4 33.5-47.4-94.8c-6.4-12.8-24.6-12.8-31 0l-47.3 94.7L92.7 70.8c-13.6-4.5-26.5 8.4-21.9 21.9l33.5 100.4-94.7 47.4c-12.8 6.4-12.8 24.6 0 31l94.7 47.3-33.5 100.5c-4.5 13.6 8.4 26.5 21.9 21.9l100.4-33.5 47.3 94.7c6.4 12.8 24.6 12.8 31 0l47.3-94.7 100.4 33.5c13.6 4.5 26.5-8.4 21.9-21.9l-33.5-100.4 94.7-47.3c13-6.5 13-24.7.2-31.1zm-155.9 106c-49.9 49.9-131.1 49.9-181 0-49.9-49.9-49.9-131.1 0-181 49.9-49.9 131.1-49.9 181 0 49.9 49.9 49.9 131.1 0 181z"
               ></path>
             </svg>
-            <span class="navbar__linkTitle">Light</span>
+
+            <!-- Dark SVG -->
+            <svg
+              id="darkSVG"
+              aria-hidden="true"
+              focusable="false"
+              data-prefix="fas"
+              data-icon="cloud-moon"
+              class="svg-accent svg-inline--fa fa-cloud-moon fa-w-18"
+              role="img"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 576 512"
+            >
+              <path
+                fill="currentColor"
+                d="M342.8 352.7c5.7-9.6 9.2-20.7 9.2-32.7 0-35.3-28.7-64-64-64-17.2 0-32.8 6.9-44.3 17.9-16.3-29.6-47.5-49.9-83.7-49.9-53 0-96 43-96 96 0 2 .5 3.8.6 5.7C27.1 338.8 0 374.1 0 416c0 53 43 96 96 96h240c44.2 0 80-35.8 80-80 0-41.9-32.3-75.8-73.2-79.3zm222.5-54.3c-93.1 17.7-178.5-53.7-178.5-147.7 0-54.2 29-104 76.1-130.8 7.3-4.1 5.4-15.1-2.8-16.7C448.4 1.1 436.7 0 425 0 319.1 0 233.1 85.9 233.1 192c0 8.5.7 16.8 1.8 25 5.9 4.3 11.6 8.9 16.7 14.2 11.4-4.7 23.7-7.2 36.4-7.2 52.9 0 96 43.1 96 96 0 3.6-.2 7.2-.6 10.7 23.6 10.8 42.4 29.5 53.5 52.6 54.4-3.4 103.7-29.3 137.1-70.4 5.3-6.5-.5-16.1-8.7-14.5z"
+              ></path>
+            </svg>
+
+            <!-- Theme name -->
+            <span class="navbar__linkTitle" id="themeName"></span>
           </a>
         </li>
       </ul>
     </nav>
 
     <main>
-      <h1>Awesome Navigation Bar</h1>
+      <h1>Awesome Navbar with Switch Theme Feature</h1>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis alias
         tenetur ex architecto rem. Doloremque perferendis adipisci excepturi
         omnis modi, magni possimus iure tempore fugiat, autem nulla sit eligendi
-        itaque?
+        itaque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Molestiae ullam similique nesciunt, animi iure, quaerat sed aspernatur
+        inventore aperiam consequatur dignissimos vel atque? Impedit dolores
+        consequatur magni illo excepturi neque. Lorem ipsum dolor sit, amet
+        consectetur adipisicing elit. Doloribus modi possimus numquam eius culpa
+        suscipit commodi nihil architecto tempore quidem, facilis autem
+        voluptate incidunt dolorem! Rem provident vitae quam illum! Lorem ipsum
+        dolor sit amet consectetur, adipisicing elit. Culpa ducimus, minima
+        expedita officiis ex facere consectetur maxime nam! Facere veniam eos
+        necessitatibus accusamus recusandae, delectus repellat in corporis quos
+        voluptas.
       </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
         officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
         expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
+        doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Minus harum fugiat expedita deserunt odit esse facilis nobis
+        dignissimos, cumque labore aspernatur, optio, totam dolorum. Enim nihil
+        tempore minima odio! Dolorum! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Labore voluptatem voluptas deserunt laudantium nihil
+        repudiandae delectus quam quasi ex, reiciendis quia voluptatibus,
+        recusandae voluptatum asperiores id, repellendus eligendi! Tempore,
+        deleniti!
       </p>
       <p>
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora,
@@ -170,7 +209,10 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
         officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
         expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
+        doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Placeat aliquam dolore cum laborum doloribus dolorum doloremque, ad
+        perspiciatis fuga eum vitae optio praesentium eos numquam illum aut
+        consequatur porro libero!
       </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
@@ -182,56 +224,58 @@
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
         officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
         expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
+        doloremque? Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        Nisi explicabo culpa aliquid cupiditate, dicta nesciunt pariatur animi
+        soluta non quisquam perspiciatis. Ipsum, perspiciatis quod quasi magnam
+        minus fuga consequuntur fugiat. Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Velit, perferendis. Debitis ut laborum tempora iure
+        dolorum, deserunt itaque molestias sapiente totam non expedita numquam
+        perferendis temporibus! Optio fugiat voluptatem cum. Lorem ipsum dolor
+        sit amet consectetur adipisicing elit. Et provident, quod cum aut
+        architecto nobis alias commodi soluta iste error ullam! Nostrum,
+        expedita. Expedita nemo fuga suscipit rerum velit eaque! Lorem ipsum
+        dolor sit amet consectetur adipisicing elit. Et quod explicabo excepturi
+        laboriosam, quos consequuntur vel. Eos, eum cupiditate ratione voluptate
+        esse aliquam voluptates ex sint recusandae magnam qui suscipit?
       </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
         officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
         expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
+        doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Atque, quibusdam? Odio recusandae, earum harum necessitatibus corrupti
+        doloribus quisquam aut distinctio beatae nulla nobis magnam vero nisi
+        amet animi veniam! Eius? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Natus, eius! Labore similique sequi quia voluptates
+        saepe culpa incidunt iure voluptate, nostrum omnis inventore quod
+        consectetur veniam eligendi rerum fugit ea. Lorem ipsum dolor sit amet
+        consectetur, adipisicing elit. Dolores fugit aperiam necessitatibus,
+        quam ut aliquid molestias voluptatem eveniet esse quis repellendus vel
+        totam! Sit, et? Similique cupiditate aliquid tempora quibusdam.
       </p>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
         officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
         expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
-        officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
-        expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
-        officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
-        expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
-        officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
-        expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
-        officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
-        expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
-        officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
-        expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia ad
-        officiis corrupti voluptate rem nostrum odit quae corporis hic quisquam
-        expedita, quo, repudiandae nemo assumenda eaque autem. Nobis, odio
-        doloremque?
+        doloremque? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Reiciendis, cumque eum? Rerum reprehenderit harum assumenda fugiat iste
+        at qui ipsa alias ea, non sunt quas perferendis nihil. Et, consequatur
+        incidunt? Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Explicabo provident maxime impedit officia illum minus beatae? Aperiam a
+        magni est quis quod sequi maiores sit velit! Nisi et vel aspernatur?
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odit aliquam,
+        assumenda accusantium labore vel veritatis eius exercitationem sequi
+        pariatur optio ratione tenetur beatae officia neque! Explicabo debitis
+        ipsa aliquid quisquam! Lorem ipsum dolor sit amet consectetur,
+        adipisicing elit. A inventore quidem, esse architecto ratione sed
+        voluptate velit deleniti dolor consequatur tempore molestiae aliquid
+        laudantium rerum optio in dolorem eligendi vitae. Lorem ipsum dolor sit
+        amet consectetur, adipisicing elit. Similique quisquam voluptatibus
+        recusandae cupiditate ad modi eum, quia debitis hic numquam voluptas
+        facere labore a beatae non, eos pariatur. Ipsam, recusandae!
       </p>
     </main>
+
+    <script src="script.js"></script>
   </body>
 </html>
