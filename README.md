@@ -4,4 +4,4 @@ This is my collection of cool UI Components and Animations while self-learning a
 
 
 
-Visit my pens for live demo: https://codepen.io/k-kyler
+Visit my pens for details: https://codepen.io/k-kyler
